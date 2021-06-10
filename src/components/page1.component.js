@@ -20,6 +20,22 @@ export default class Page1 extends Component {
         }
     }
 
+    componentDidMount() {
+        axios.get('http://localhost:5000/course/')
+          .then(response => {
+            if (response.data.length > 0) {
+              this.setState({
+                courses: response.data.map(course => course.coursename),
+                coursename: response.data[0].coursename
+              })
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+    
+      }
+    
     onChangeCoursename(e)
     {
         this.setState({
@@ -47,7 +63,6 @@ export default class Page1 extends Component {
         const exercise = {
           coursename: this.state.coursename,
           review: this.state.review,
-          duration: this.state.duration,
           date: this.state.date
         }
     
@@ -55,14 +70,14 @@ export default class Page1 extends Component {
         axios.post('http://localhost:5000/courseReview/add', exercise)
             .then(res => console.log(res.data));
     
-        window.location = '/';
+       
       }
 
 
     render() {
         return (
              <div>
-                <h3>Create New Course </h3>
+                <h3>Create New Course Review </h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
                     <label>Course name: </label>

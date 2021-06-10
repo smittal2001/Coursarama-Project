@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let course_review = require('../models/courseReview.model');
+let Review = require('../models/courseReview.model');
 
 router.route('/').get((req, res) => {
   course_review.find()
