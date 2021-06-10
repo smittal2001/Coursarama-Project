@@ -8,13 +8,13 @@ export default class Page1 extends Component {
         super(props);
 
         this.onChangeCoursename = this.onChangeCoursename.bind(this);
-        this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onChangeReview = this.onChangeReview.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             coursename: '',
-            description: '',
+            review: '',
             date: new Date(),
             courses: []
         }
@@ -27,10 +27,10 @@ export default class Page1 extends Component {
         });
     }
 
-    onChangeDescription(e)
+    onChangeReview(e)
     {
         this.setState({
-            description: e.target.value
+            review: e.target.value
         });
     }
 
@@ -46,7 +46,7 @@ export default class Page1 extends Component {
     
         const exercise = {
           coursename: this.state.coursename,
-          description: this.state.description,
+          review: this.state.review,
           duration: this.state.duration,
           date: this.state.date
         }
@@ -82,12 +82,12 @@ export default class Page1 extends Component {
                     </select>
                     </div>
                     <div className="form-group"> 
-                    <label>Description: </label>
+                    <label>Review: </label>
                     <input  type="text"
                         required
                         className="form-control"
-                        value={this.state.description}
-                        onChange={this.onChangeDescription}
+                        value={this.state.review}
+                        onChange={this.onChangeReview}
                         />
                     </div>
                     <div className="form-group">

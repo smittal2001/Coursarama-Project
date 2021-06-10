@@ -1,21 +1,23 @@
 const router = require('express').Router();
-let User = require('../models/user.model');
+let Course = require('../models/course.model');
 
 //if there is a get request return all the users 
 router.route('/').get((req, res) => {
-  User.find()
-    .then(users => res.json(users))
+  Course.find()
+    .then(courses => res.json(courses))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
 //this is a post request that adds a user
 router.route('/add').post((req, res) => {
-  const username = req.body.username;
+  const coursename = req.body.coursename;
+  const description = req.body.description;
+  const professor = req.body.professor;
 
-  const newUser = new User({username});
+  const newCourse = new Course({coursename, description, professor});
   //user is saved to database
-  newUser.save()
-    .then(() => res.json('User added!'))
+  newCourse.save()
+    .then(() => res.json('Course added!'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
