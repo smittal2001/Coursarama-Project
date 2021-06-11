@@ -11,16 +11,16 @@ import Page3 from "./components/page3.component";
 //functions can only return a single jsx element such as a single div 
 function App() {
   return (
+    
    <div className = "container">
      <Router>
       <Navbar />
       <br/>
-      <Route path = "/page1"  component={Page1} />
-      <Route path = "/page2"  component={Page2} />
-      <Route path = "/page3"  component={Page3} />
+      <Route path = "/home/page1"  component={Page1} />
+      <Route path = "/home/page2"  component={Page2} />
+      <Route path = "/home/page3"  component={Page3} />
      </Router>
     
-
    </div>
   );
 }
