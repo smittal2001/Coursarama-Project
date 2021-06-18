@@ -6,6 +6,7 @@ export default class Navbar extends Component {
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
                 {/* <Link to="/page1 " className="navbar-brand"> Page 1</Link> */}
+                <h4 className="navbar-brand "> Home Page </h4 >
                 <div className="collpase navbar-collapse">
                     <ul className="navbar-nav mr-auto">
                         <li className="navbar-item">
