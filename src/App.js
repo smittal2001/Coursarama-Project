@@ -7,14 +7,13 @@ import Navbar from "./components/navbar.component";
 import Page1 from "./components/page1.component";
 import Page2 from "./components/page2.component";
 import Page3 from "./components/page3.component";
-import LandingPage from "./components/landingpage.component";
+import LandingPage from "./LandingPage/LandingPage";
 import LoginPage from "./components/loginpage.component";
 
 
 //functions can only return a single jsx element such as a single div 
 function App() {
   return (
-    
    <div className = "container">
      <Router>
       <Navbar />
@@ -25,7 +24,7 @@ function App() {
       <Route path = "/home/page3"  component={Page3} />
       <Route path = "/login"  component={LoginPage} />
      </Router>
-    
+     
    </div>
   );
 }

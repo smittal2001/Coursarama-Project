@@ -1,16 +1,41 @@
 import React, {Component} from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form'
+
 
 export default class Page1 extends Component {
     render() {
         return (
-            <div> 
-                <p> This is Page 3 </p>
-                <ul>
-                    <li> test 1 </li>
-                    <li> test 2 </li>
-                    <li> test 3 </li>
-                </ul>
-            </div>
+            <Form>
+                <Form.Group controlId = "formBasicEmail">
+                    <Form.Label>
+                        Email address
+                    </Form.Label>
+
+                    <Form.Control type = "email" placeholder = "Enter email" />
+                    <Form.Text className = "text-muted">
+                        We'll never share your email with anyone else.
+                    </Form.Text>
+                </Form.Group>
+
+                <Form.Group controlId = "formBasicPassword">
+                    <Form.Label>
+                        Password
+                    </Form.Label>
+
+                    <Form.Control type = "password" placeholder = "Password" />
+                </Form.Group>
+
+                <Form.Group controlId = "formBasicCheckbox">
+                    <Form.Check type = "checkbox" label = "Remember My Password" />
+                </Form.Group>
+                <Button variant = "primary" type = "submit">
+                    Log In
+                </Button>
+            </Form>
         );
     }
 }
+
+
+
