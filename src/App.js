@@ -22,7 +22,7 @@ function App() {
       <Route exact path = "/"  component={LandingPage} />
       <Route path = "/home/page1"  component={Page1} />
       <Route path = "/home/page2"  component={Page2} />
-      <Route path = "/home/page3"  component={Page3} />
+      <Route path = "/home/page3"> <Page3 coursename = "Intro to python" details = "Blow off Class"/> </Route> 
       <Route path = "/login"  component={LoginPage} />
      </Router>
     

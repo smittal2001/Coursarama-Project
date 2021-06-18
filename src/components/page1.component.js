@@ -114,7 +114,7 @@ export default class Page1 extends Component {
                         />
                     </div>
                     </div>
-
+                    <br></br>
                     <div className="form-group">
                     <input type="submit" value="Create Course" className="btn btn-primary" />
                     </div>

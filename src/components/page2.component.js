@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-export default class Page1 extends Component {
+export default class Page2 extends Component {
     constructor(props) {
         super(props);
 
