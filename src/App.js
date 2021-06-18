@@ -9,23 +9,25 @@ import Page2 from "./components/page2.component";
 import Page3 from "./components/page3.component";
 import LandingPage from "./components/landingpage.component";
 import LoginPage from "./components/loginpage.component";
+import Profile from "./profile_page/ProfilePage";
 
 
-//functions can only return a single jsx element such as a single div 
+//functions can only return a single jsx element such as a single div
 function App() {
   return (
-    
+
    <div className = "container">
      <Router>
-      <Navbar />
       <br/>
+      <Route path = "/home" component={Navbar} />
+      <Route path = "/Profile" component={Profile} />
       <Route exact path = "/"  component={LandingPage} />
       <Route path = "/home/page1"  component={Page1} />
       <Route path = "/home/page2"  component={Page2} />
-      <Route path = "/home/page3"> <Page3 coursename = "Intro to python" details = "Blow off Class"/> </Route> 
+      <Route path = "/home/page3"> <Page3 coursename = "Intro to python" details = "Blow off Class"/> </Route>
       <Route path = "/login"  component={LoginPage} />
      </Router>
-    
+
    </div>
   );
 }
