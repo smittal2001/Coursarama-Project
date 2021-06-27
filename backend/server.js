@@ -20,9 +20,11 @@ connection.once('open', () => {
 
 const courseReviewRouter = require('./routes/courseReview');
 const courseRouter = require('./routes/course');
+const usersRouter = require('./routes/user');
 
 app.use('/courseReview', courseReviewRouter);
 app.use('/course', courseRouter);
+app.use('/users', usersRouter);
 
 
 

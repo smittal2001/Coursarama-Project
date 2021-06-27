@@ -15,7 +15,6 @@ router.route('/add').post((req, res) => {
   const professor = req.body.professor;
 
   const newCourse = new Course({coursename, description, professor});
-  //user is saved to database
   newCourse.save()
     .then(() => res.json('Course added!'))
     .catch(err => res.status(400).json('Error: ' + err));

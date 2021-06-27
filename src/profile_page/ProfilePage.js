@@ -1,6 +1,4 @@
-
-
-import {BrowserRouter as Router, Route } from "react-router-dom";
+// import {BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProfileBar from "./components/profilebar.component";
 import User from "./components/user.component";
