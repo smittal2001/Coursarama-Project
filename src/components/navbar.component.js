@@ -4,19 +4,21 @@ import {Link} from 'react-router-dom';
 export default class Navbar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+            <nav className="navbar navbar-dark bg-dark navbar-expand-lg rounded shadow p-3 mb-5">
                 {/* <Link to="/page1 " className="navbar-brand"> Page 1</Link> */}
-                <h4 className="navbar-brand "> Home Page </h4 >
                 <div className="collpase navbar-collapse">
                     <ul className="navbar-nav mr-auto">
                         <li className="navbar-item">
-                            <Link to="/home/page1" className="nav-link"> Page 1</Link>
+                            <Link to="/home" className="nav-link"> Home </Link>
                         </li>
                         <li className="navbar-item">
-                            <Link to="/home/page2" className="nav-link"> Page 2</Link>
+                            <Link to="/page1" className="nav-link"> Page 1</Link>
                         </li>
                         <li className="navbar-item">
-                            <Link to="/home/page3" className="nav-link"> Page 3</Link>
+                            <Link to="/page2" className="nav-link"> Page 2</Link>
+                        </li>
+                        <li className="navbar-item">
+                            <Link to="/page3" className="nav-link"> Page 3</Link>
                         </li>
                         <li className="navbar-item">
                             <Link to="/login" className="nav-link"> Login/Sign Up</Link>

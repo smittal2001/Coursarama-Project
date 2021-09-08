@@ -8,13 +8,37 @@ export default class Page2 extends Component {
         this.onChangeCoursename = this.onChangeCoursename.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeProfessor = this.onChangeProfessor.bind(this);
+        this.onChangeSchool = this.onChangeSchool.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             coursename: '',
             description: '',
-            professor: ''
+            professor: '',
+            schoolID: '',
+            schoolMap: new Map(),
+            schoolList: [],
+            schoolName: ''
         }
+        
+    }
+
+    componentDidMount() {
+      this.state.schoolMap.clear();
+      axios.get('http://localhost:5000/school/')
+        .then(response => {
+          if (response.data.length > 0) {
+            response.data.map(school => 
+                this.state.schoolMap.set(school.schoolname,school._id.toString()))
+            this.setState({
+              schoolList: response.data.map(school => school.schoolname)
+            })
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+  
     }
 
     onChangeCoursename(e) {
@@ -35,6 +59,13 @@ export default class Page2 extends Component {
         })
       }
 
+      onChangeSchool(e) {
+        this.setState({
+          schoolID: this.state.schoolMap.get(e.target.value),
+          schoolName: e.target.value
+        })
+      }
+
 
 
       onSubmit(e) {
@@ -43,10 +74,9 @@ export default class Page2 extends Component {
         const course = {
           coursename: this.state.coursename,
           description: this.state.description,
-          professor: this.state.professor
-
+          professor: this.state.professor,
+          schoolID: this.state.schoolID
         }
-    
         console.log(course);
         axios.post('http://localhost:5000/course/add', course)
             .then(res => console.log(res.data));
@@ -54,7 +84,8 @@ export default class Page2 extends Component {
         this.setState({
           coursename: '',
           description: '',
-          professor: ''
+          professor: '',
+          schoolID: ''
         })
       }
     
@@ -93,6 +124,22 @@ export default class Page2 extends Component {
                     onChange={this.onChangeProfessor}
                     />
               </div>
+              <br></br>
+              <label>School: </label>
+              <select ref="userInput"
+                  required
+                  className="form-control"
+                  value={this.state.schoolName}
+                  onChange={this.onChangeSchool}>
+                  {
+                      this.state.schoolList.map(function(school) {
+                        return <option 
+                            key={school}
+                            value={school}>{school}
+                            </option>;
+                        })
+                  }
+              </select>
               <br></br>
               <div className="form-group">
                 <input type="submit" value="Create Course" className="btn btn-primary" />

@@ -21,10 +21,12 @@ connection.once('open', () => {
 const courseReviewRouter = require('./routes/courseReview');
 const courseRouter = require('./routes/course');
 const usersRouter = require('./routes/user');
+const schoolRouter = require('./routes/schools');
 
 app.use('/courseReview', courseReviewRouter);
 app.use('/course', courseRouter);
 app.use('/users', usersRouter);
+app.use('/school', schoolRouter);
 
 
 

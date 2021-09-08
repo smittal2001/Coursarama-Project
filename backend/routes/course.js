@@ -13,8 +13,9 @@ router.route('/add').post((req, res) => {
   const coursename = req.body.coursename;
   const description = req.body.description;
   const professor = req.body.professor;
+  const schoolID = req.body.schoolID;
 
-  const newCourse = new Course({coursename, description, professor});
+  const newCourse = new Course({coursename, description, professor, schoolID});
   newCourse.save()
     .then(() => res.json('Course added!'))
     .catch(err => res.status(400).json('Error: ' + err));

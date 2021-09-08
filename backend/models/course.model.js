@@ -20,6 +20,11 @@ const courseSchema = new Schema({
     required: true,
     minlength: 3
   },
+  schoolID: {
+    type: String,
+    required: true,
+    minlength: 3
+  }
 
 }, {
   timestamps: true,

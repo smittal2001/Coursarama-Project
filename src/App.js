@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/navbar.component";
+import HomePage from "./components/homepage.component"
 import Page1 from "./components/page1.component";
 import Page2 from "./components/page2.component";
 import Page3 from "./components/page3.component";
@@ -17,14 +18,16 @@ function App() {
   return (
 
    <div className = "container">
+     
      <Router>
-      <br/>
-      <Route path = "/home" component={Navbar} />
-      <Route path = "/Profile" component={Profile} />
+     <Navbar/>
+
       <Route exact path = "/"  component={LandingPage} />
-      <Route path = "/home/page1"  component={Page1} />
-      <Route path = "/home/page2"  component={Page2} />
-      <Route path = "/home/page3"> <Page3 coursename = "Intro to python" details = "Blow off Class"/> </Route>
+      <Route path = "/home" component={HomePage} />
+      <Route path = "/Profile" component={Profile} />
+      <Route path = "/page1"  component={Page1} />
+      <Route path = "/page2"  component={Page2} />
+      <Route path = "/page3"> <Page3 coursename = "Intro to python" details = "Blow off Class"/> </Route>
       <Route path = "/login"  component={LoginPage} />
      </Router>
 
