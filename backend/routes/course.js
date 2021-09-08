@@ -21,4 +21,11 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/get/:schoolID').get((req, res) => {
+  console.log(req);
+  Course.find({schoolID: req.params.schoolID})
+    .then(courses => res.json(courses))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;

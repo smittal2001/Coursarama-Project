@@ -7,10 +7,11 @@ import Navbar from "./components/navbar.component";
 import HomePage from "./components/homepage.component"
 import Page1 from "./components/page1.component";
 import Page2 from "./components/page2.component";
-import Page3 from "./components/page3.component";
+import AddSchool from "./components/page3.component";
 import LandingPage from "./components/landingpage.component";
 import LoginPage from "./components/loginpage.component";
 import Profile from "./profile_page/ProfilePage";
+import School from "./components/school.component"
 
 
 //functions can only return a single jsx element such as a single div
@@ -27,8 +28,9 @@ function App() {
       <Route path = "/Profile" component={Profile} />
       <Route path = "/page1"  component={Page1} />
       <Route path = "/page2"  component={Page2} />
-      <Route path = "/page3"> <Page3 coursename = "Intro to python" details = "Blow off Class"/> </Route>
+      <Route path = "/page3" component={AddSchool} /> 
       <Route path = "/login"  component={LoginPage} />
+      <Route path = "/school/:schoolID" component = {School} />
      </Router>
 
    </div>
