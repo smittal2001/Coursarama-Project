@@ -46,7 +46,7 @@ export default class HomePage extends Component {
                                 </Card.Body>
                                 <Card.Body>
                                     <Card.Text>{school[1]}</Card.Text>
-                                    <Link to={'/school/'+school[2]} className="nav-link">{school[0] + " courses"}</Link>
+                                    <Link to={'/school/'+school[0]+'/'+school[2]} className="nav-link">{school[0] + " courses"}</Link>
                                 </Card.Body>
                             </Card>
                         ))}

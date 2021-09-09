@@ -19,7 +19,7 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/:id').get((req, res) => {
+router.route('/get/:id').get((req, res) => {
   School.findById(req.params.id)
     .then(school => res.json(school))
     .catch(err => res.status(400).json('Error: ' + err));

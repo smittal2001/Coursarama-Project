@@ -9,8 +9,11 @@ export default class School extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            courses: [[]]
+            courses: [[]],
+            schoolName: ""
         }
+        
+        
     }
     componentDidMount() {
         axios.get('http://localhost:5000/course/get/'+this.props.match.params.schoolID)
@@ -27,24 +30,32 @@ export default class School extends Component {
         .catch((error) => {
             console.log(error);
         })
-        console.log(this.state.courses);
     }
    
     render() {
+        const styleObj = {
+            fontSize: 14,
+            paddingTop: "10px"
+        }
         return (
             <div>
+                <h1> {this.props.match.params.name} Courses </h1>
+                <br></br>
                 {this.state.courses.map( course => (
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Body>
-                            <Card.Title> {course[0]}</Card.Title>
-                            <Card.Text>
-                                {course[2]}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Body>
-                            <Card.Text>{course[1]}</Card.Text>
-                        </Card.Body>
-                    </Card>
+                    <div>
+                        <Card>
+                            <Card.Header as="h4"> 
+                                {course[0]}
+                                <p style = {styleObj}> {course[1]} </p>
+                            </Card.Header>
+                            <Card.Body>
+                                <Card.Text>
+                                    {course[2]}
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <br></br>
+                    </div>
                 ))}
             </div>
         );

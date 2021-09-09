@@ -30,7 +30,7 @@ function App() {
       <Route path = "/page2"  component={Page2} />
       <Route path = "/page3" component={AddSchool} /> 
       <Route path = "/login"  component={LoginPage} />
-      <Route path = "/school/:schoolID" component = {School} />
+      <Route path = "/school/:name/:schoolID" component = {School} />
      </Router>
 
    </div>
