@@ -21,7 +21,7 @@ export default class Page1 extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/course/')
+        axios.get('https://coursarama-backend.herokuapp.com/course/')
           .then(response => {
             if (response.data.length > 0) {
               this.setState({
@@ -67,7 +67,7 @@ export default class Page1 extends Component {
         }
     
         console.log(exercise);
-        axios.post('http://localhost:5000/courseReview/add', exercise)
+        axios.post('https://coursarama-backend.herokuapp.com/courseReview/add', exercise)
             .then(res => console.log(res.data));
     
        

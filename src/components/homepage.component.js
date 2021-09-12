@@ -14,7 +14,7 @@ export default class HomePage extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/school/')
+        axios.get('https://coursarama-backend.herokuapp.com/school/')
           .then(response => {
             if (response.data.length > 0) {
                 this.setState({

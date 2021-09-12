@@ -68,7 +68,7 @@ onSubmit(e) {
     }
 
     console.log(user);
-    axios.post('http://localhost:5000/users/add', user)
+    axios.post('https://coursarama-backend.herokuapp.com/users/add', user)
         .then(res => console.log(res.data));
 
    

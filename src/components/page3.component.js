@@ -18,7 +18,7 @@ export default class AddSchool extends Component {
     }
 
     // componentDidMount() {
-    //     axios.get('http://localhost:5000/course/')
+    //     axios.get('https://coursarama-backend.herokuapp.com/course/')
     //       .then(response => {
     //         if (response.data.length > 0) {
     //           this.setState({
@@ -56,7 +56,7 @@ export default class AddSchool extends Component {
         }
     
         console.log(school);
-        axios.post('http://localhost:5000/school/add', school)
+        axios.post('https://coursarama-backend.herokuapp.com/school/add', school)
             .then(res => console.log(res.data));
 
         this.setState({

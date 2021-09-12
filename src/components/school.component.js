@@ -16,7 +16,7 @@ export default class School extends Component {
         
     }
     componentDidMount() {
-        axios.get('http://localhost:5000/course/get/'+this.props.match.params.schoolID)
+        axios.get('https://coursarama-backend.herokuapp.com/course/get/'+this.props.match.params.schoolID)
         .then(response => {
             if(response.data.length > 0) {
                 this.setState({

@@ -25,7 +25,7 @@ export default class Page2 extends Component {
 
     componentDidMount() {
       this.state.schoolMap.clear();
-      axios.get('http://localhost:5000/school/')
+      axios.get('https://coursarama-backend.herokuapp.com/school/')
         .then(response => {
           if (response.data.length > 0) {
             response.data.map(school => 
@@ -78,7 +78,7 @@ export default class Page2 extends Component {
           schoolID: this.state.schoolID
         }
         console.log(course);
-        axios.post('http://localhost:5000/course/add', course)
+        axios.post('https://coursarama-backend.herokuapp.com/course/add', course)
             .then(res => console.log(res.data));
     
         this.setState({
